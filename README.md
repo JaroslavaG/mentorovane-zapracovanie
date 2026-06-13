@@ -1,2 +1,2 @@
-# mentrorovane-zapracovanie
+# mentorovane-zapracovanie
 Mentorovane zapracovanie UPSVaR
