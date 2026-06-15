@@ -4,7 +4,34 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>NP Finančné stimuly pre zamestnanosť – Dashboard</title>
+<meta name="description" content="Interaktívny prepočet finančných stimulov pre zamestnanosť (NP FSZ, Oznámenie č. 8 / Aktualizácia č. 7). Zistite, koľko môže firma získať na mzdu a mentora pri prijatí dlhodobo nezamestnaného uchádzača.">
+<link rel="canonical" href="https://jaroslavag.github.io/mentorovane-zapracovanie/">
+
+<!-- Theme / mobile "Add to Home Screen" -->
+<meta name="theme-color" content="#0E1F38">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Mentorované zaprac.">
+<meta name="mobile-web-app-capable" content="yes">
+
+<!-- Open Graph / LinkedIn, Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Mentorované zapracovanie – Interaktívny prepočet finančných stimulov">
+<meta property="og:description" content="Zadajte hrubú mzdu a zistite, koľko môže firma získať na mzdu (príspevok ÚPSVaR) a mentora pri prijatí znevýhodneného uchádzača. Vychádza z Oznámenia č. 8, Aktualizácie č. 7.">
+<meta property="og:image" content="https://jaroslavag.github.io/mentorovane-zapracovanie/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://jaroslavag.github.io/mentorovane-zapracovanie/">
+<meta property="og:locale" content="sk_SK">
+
+<!-- Twitter / X card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Mentorované zapracovanie – Interaktívny prepočet finančných stimulov">
+<meta name="twitter:description" content="Zadajte hrubú mzdu a zistite, koľko môže firma získať na mzdu a mentora pri prijatí znevýhodneného uchádzača (NP FSZ, Oznámenie č. 8/Aktualizácia č. 7).">
+<meta name="twitter:image" content="https://jaroslavag.github.io/mentorovane-zapracovanie/og-image.png">
+
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHZpZXdCb3g9JzAgMCAzMiAzMic+CiAgPHJlY3Qgd2lkdGg9JzMyJyBoZWlnaHQ9JzMyJyByeD0nNicgZmlsbD0nIzBFMUYzOCcvPgogIDxyZWN0IHg9JzYnIHk9JzE3JyB3aWR0aD0nNScgaGVpZ2h0PScxMCcgcng9JzEuMicgZmlsbD0nIzFBNkI1QScvPgogIDxyZWN0IHg9JzEzLjUnIHk9JzEyJyB3aWR0aD0nNScgaGVpZ2h0PScxNScgcng9JzEuMicgZmlsbD0nI0Q0QTg0MycvPgogIDxyZWN0IHg9JzIxJyB5PSc3JyB3aWR0aD0nNScgaGVpZ2h0PScyMCcgcng9JzEuMicgZmlsbD0nI0Y0RUNEOCcvPgogIDxwYXRoIGQ9J002IDE2IEwxNiAxMCBMMjYgNScgc3Ryb2tlPScjRDRBODQzJyBzdHJva2Utd2lkdGg9JzInIGZpbGw9J25vbmUnIHN0cm9rZS1saW5lY2FwPSdyb3VuZCcgc3Ryb2tlLWxpbmVqb2luPSdyb3VuZCcvPgogIDxjaXJjbGUgY3g9JzI2JyBjeT0nNScgcj0nMi4yJyBmaWxsPScjRDRBODQzJy8+Cjwvc3ZnPgo=">
+<link rel="apple-touch-icon" sizes="180x180" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAALQAAAC0CAYAAAA9zQYyAAAFU0lEQVR4nO3cMW7cSBBG4ZqBMxk6gBMtfAUnguINfQjnPoDOoANs7kM43FhQ4isYq8QHEKxYGyxG4I7IGZJd1V39832RAQvdDN6UWzSHO2vg8ur6pcW+qOvp8WFXe88qGxIwzOoEHrYBEeOUqLhdFyVirOEZ995rIWLGWp7tFH8yCBmeSqd10YQmZngrbWrVp4GQUcOaab14QhMzalnT2qKgiRm1LW1udtDEjFaWtDcraGJGa3MbPBs0MSOLOS2e/C2SmDHl/u7i5N/f3D6H7X3q7se7sF0h6VzIxz8XGfaYydKZzhiaG/IU77CnpvToGZqYMVQas9caQ1ONuj2cBE2eIXpHPeZN0ExnHEQE6LnmWKv7cz+AbYqcppFRc+TAGzWOBlF7EDSkvAbNcQNmdaaz917DdpnQkELQeFVzOkftuTfjuIH+HRpmQkMKQUMKQUPKnvMzVFxeXb8woSGFB/zR5HZdFILesAwhez/4T9AblCHkKAS9IdlCjvi+IUFvQLaQIxG0sMwhR30bnKAFZQ7ZLPbVBgQtJHvIZvHv6SBoAT2EbFbnpTME3bHokP/486/XP//z99eitWq9QWnHsxz9qRnysaVhV38VGEH3o2XIx86FXTvkA4LuQKaQp3z49KX8QhwQdGI9hDyUIWp+KUyot5AzIehECLkcQSdAyH4IuiFC9kfQDUSHfHP7bL9+fAvdIyuCrqhGyFtH0BUQcj0EHYiQ6yPoAITcDkE7i4yZkM8jaCeEnANBFyLkXAi6QFTMhLweQa9AyHkR9AKEnB9BzxQRMyH7I+gzmMp9IegJhNwnXng+gpj7xYQeIOT+EbQRspLNHzmIWctmJzQha9pc0NGPdpauzweizKaOHD28pfP+7qKL68xqE0H3GElv15uFdNA9hjzU87W3Ihl0ZMiccXOTCzoy5Jvb5+pTkym9jMxdDiYyzASC5itQGOo6aKYyjnUZNCFjSldBEzLO6eYuBzFjjvQTmpCxRNqgCRlrpDxyEDPWSjWhCRmlUgRNyPDS/MhBzPDUbEITMiI0m9De4R2ehsO2NT9yeCBkHDQNujREpjKONZ/Qa4IkZExpHvRShIxTUgQ9J1KmMuZIEbTZdNSEjCXSBD2GkLFUqqAPATOVsVaKZzmGhiG///zRbd3f33+6rYW80gVt5hvy8ZqErS3VkcMsJuaa66OtVEHXio2odaUKGiiVJujaU5MprSlN0IAHgoYUgoYUgoYUgoYUgoYUgoYUgoYUgoYUgoYUgoYUgoYUgoYUgoYUgoYUgoYUgoYUgoYUgoYUgoYUgoYUgoYUgoYUgoYUgoYUgoYUgoYUgoYUgoYUgoYUgoYUgoYUgoYUgoYUgoYUgoYUgoYUgoYUgoYUgoYUgoYUgoYUgoYUgoYUgoYUgoaUNEH//v6zi/1ubp+dryRmvw+fvvheSLL9pqQJGvCQKuhaU7p0n1pTunSfWlMzy3Q2M9s/PT7sWl/EUHTUXutHR+21fnRsmWJ+enzY7czMLq+uX1pfzJj3nz+6rRX5Qbm/u3BbK/KD8uvHN7e1MoV8kD5oYImnx4ddqjM0UGpv9l/ZrS8EKHFomAkNKQQNKa9Bc+xAr4btMqEhhaAh5X9Bc+xAb46bfTOhiRq9GGuVIwekjAbNlEZ2U41OTmiiRlan2uTIASkng2ZKI5tzTZ6d0ESNLOa0OOvIQdRobW6Ds8/QRI1WlrS36JdCokZtS5tbfJeDqFHLmtaK4uS7iIhQMjSL7kMzreGttCm3IJnWKOE1HN3+p5BpjbU82wmLkImNU6IGYJWpStwwq/OveJNjAoFvQ4tj6L+NzNya5hJPbQAAAABJRU5ErkJggg==">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Sora:wght@600;700&display=swap" rel="stylesheet">
 <style>
@@ -35,6 +62,29 @@ body{font-family:'Inter',sans-serif;background:#F0F4FB;color:var(--text);min-hei
 .footer-credit a{color:var(--gold-light);text-decoration:none;font-weight:600;}
 .footer-credit a:hover{text-decoration:underline;}
 
+/* ── BACK TO TOP ── */
+.back-to-top{
+  position:fixed; right:20px; bottom:20px; z-index:50;
+  width:46px; height:46px; border-radius:50%;
+  background:var(--navy); color:var(--gold-light);
+  display:flex; align-items:center; justify-content:center;
+  font-size:20px; text-decoration:none; border:none; cursor:pointer;
+  box-shadow:0 4px 16px rgba(14,31,56,0.35);
+  opacity:0; transform:translateY(12px); pointer-events:none;
+  transition:opacity .25s ease, transform .25s ease, background .2s ease;
+}
+.back-to-top.visible{opacity:1; transform:translateY(0); pointer-events:auto;}
+.back-to-top:hover{background:var(--teal);}
+
+/* ── LIVE VALUE UPDATE FLASH ── */
+@keyframes valueFlash{
+  0%{background-color:rgba(212,168,67,0.45); border-radius:4px;}
+  100%{background-color:rgba(212,168,67,0);}
+}
+.value-flash{animation:valueFlash 0.9s ease-out;}
+@media(prefers-reduced-motion:reduce){.value-flash{animation:none;}}
+@media print{.back-to-top{display:none !important;}}
+
 /* ── HERO STRIP ── */
 .hero{background:linear-gradient(135deg,var(--navy-mid) 0%,var(--navy-light) 100%);padding:28px 32px;display:flex;align-items:center;gap:32px;flex-wrap:wrap;}
 .hero-main{flex:1;min-width:240px;}
@@ -48,7 +98,13 @@ body{font-family:'Inter',sans-serif;background:#F0F4FB;color:var(--text);min-hei
 
 /* ── INTRO BAND (project description) ── */
 .intro-band{background:var(--sky-pale);border-bottom:1px solid var(--border);padding:14px 32px;}
-.intro-title{font-weight:700;font-size:12.5px;color:var(--navy);margin-bottom:5px;}
+.intro-title{font-weight:700;font-size:12.5px;color:var(--navy);margin-bottom:5px;cursor:pointer;list-style:none;user-select:none;}
+.intro-title::-webkit-details-marker{display:none;}
+.intro-title::marker{content:none;}
+.intro-arrow{display:inline-block;font-size:10px;color:var(--text-muted);transition:transform .2s ease;transform:rotate(0deg);margin-right:6px;}
+.intro-band:not([open]) .intro-arrow{transform:rotate(-90deg);}
+.intro-band:not([open]) .intro-title{margin-bottom:0;}
+.intro-band[open] .intro-text{margin-top:2px;}
 .intro-text{font-size:11px;color:var(--text-mid);line-height:1.65;}
 .intro-text strong{color:var(--navy);}
 
@@ -58,6 +114,28 @@ body{font-family:'Inter',sans-serif;background:#F0F4FB;color:var(--text);min-hei
 .status-chip::before{content:'✓';background:var(--gold);color:white;border-radius:50%;width:16px;height:16px;display:flex;align-items:center;justify-content:center;font-size:9px;font-weight:700;}
 .status-alert{display:flex;align-items:center;gap:6px;background:var(--teal-light);border:1px solid #A8D8CF;border-radius:20px;padding:5px 12px;font-size:11px;font-weight:600;color:var(--teal);}
 .status-note{font-size:11px;color:var(--text-muted);margin-left:auto;}
+
+/* ── O AUTORKE ── */
+.author-strip{display:flex;align-items:center;justify-content:space-between;gap:16px;background:var(--navy);color:rgba(255,255,255,0.92);padding:12px 32px;flex-wrap:wrap;}
+.author-info{display:flex;align-items:center;gap:12px;font-size:12px;line-height:1.5;}
+.author-avatar{font-size:24px;flex-shrink:0;}
+.author-sub{display:block;color:rgba(255,255,255,0.6);font-size:10.5px;margin-top:2px;}
+.author-cta{font-size:11.5px;font-weight:700;color:var(--navy);background:var(--gold);padding:7px 16px;border-radius:20px;text-decoration:none;white-space:nowrap;transition:background .2s ease;}
+.author-cta:hover{background:var(--gold-light);}
+
+/* ── STICKY CONDENSED STATS ── */
+.sticky-stats{
+  position:sticky; top:0; z-index:45;
+  display:flex; align-items:center; gap:14px; flex-wrap:nowrap;
+  background:var(--navy); color:#fff;
+  padding:9px 32px; font-family:'Sora',sans-serif;
+  box-shadow:0 2px 14px rgba(14,31,56,0.3);
+  overflow-x:auto; white-space:nowrap;
+}
+.ss-item{display:inline-flex; align-items:baseline; gap:6px;}
+.ss-val{font-weight:700; font-size:14px; color:var(--gold-light);}
+.ss-label{font-size:10.5px; font-weight:500; color:rgba(255,255,255,0.6); text-transform:uppercase; letter-spacing:0.3px;}
+.ss-sep{color:rgba(255,255,255,0.2); font-size:13px;}
 
 /* ── TABS ── */
 .tabs-wrap{padding:24px 32px 0;}
@@ -199,6 +277,15 @@ body{font-family:'Inter',sans-serif;background:#F0F4FB;color:var(--text);min-hei
 .profile-row span:first-child{color:var(--text-mid);}
 .profile-row span:last-child{font-weight:600;color:var(--navy);}
 
+/* ── CALCULATOR INPUT GRID ── */
+.calc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:12px;}
+.calc-field label{display:block;font-size:11.5px;font-weight:700;color:var(--navy);margin-bottom:5px;text-transform:uppercase;letter-spacing:0.4px;}
+.calc-input-row{display:flex;align-items:center;gap:6px;}
+.calc-input-row input{flex:1;min-width:0;width:100%;padding:8px 10px;border:1px solid var(--rule);border-radius:6px;font-size:15px;font-weight:700;color:var(--navy);font-family:'Sora',sans-serif;background:var(--white);}
+.calc-input-row input:focus{outline:2px solid var(--teal);outline-offset:1px;}
+.calc-unit{font-size:11.5px;font-weight:600;color:var(--text-muted);white-space:nowrap;}
+.calc-help{font-size:10.5px;color:var(--text-muted);margin-top:4px;line-height:1.4;}
+
 /* ── RESPONSIVE ── */
 /* Tables: allow horizontal scroll within their card on narrow screens */
 @media(max-width:760px){
@@ -212,8 +299,13 @@ body{font-family:'Inter',sans-serif;background:#F0F4FB;color:var(--text);min-hei
   .tabs{overflow-x:auto;}
   .panels,.tabs-wrap{padding-left:16px;padding-right:16px;}
   .top-header{height:auto;padding:10px 16px;flex-direction:column;align-items:flex-start;}
+  .author-strip{padding:10px 16px;}
+  .calc-grid{grid-template-columns:repeat(2,1fr);}
 }
 @media(max-width:480px){
+  .calc-grid{grid-template-columns:1fr;gap:10px;}
+  .sticky-stats{padding:8px 16px;gap:10px;}
+  .sticky-stats .ss-extra{display:none;}
   .hero{padding:18px 16px;}
   .hero-title{font-size:18px;}
   .hero-sub{font-size:11px;}
@@ -227,6 +319,21 @@ body{font-family:'Inter',sans-serif;background:#F0F4FB;color:var(--text);min-hei
   .tab{padding:8px 12px;font-size:11.5px;}
   .logo{font-size:12.5px;line-height:1.4;}
   .chart-wrap{height:230px !important;}
+  .profile-row{flex-direction:column;align-items:flex-start;gap:2px;padding:7px 0;}
+  .profile-row span:last-child{font-size:13px;}
+}
+
+/* ── PRINT ── */
+@media print{
+  body{background:#fff;}
+  .tabs-wrap,.tabs,#calc-controls,.footer-credit,.sticky-stats,.author-strip{display:none !important;}
+  .top-header{background:var(--navy);-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  .hero{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  .panel.active{display:block;}
+  .card{box-shadow:none;border:1px solid var(--border);page-break-inside:avoid;}
+  .chart-wrap{height:260px !important;}
+  a{color:inherit;text-decoration:none;}
+  .panels{padding:12px 4px;}
 }
 </style>
 </head>
@@ -268,13 +375,24 @@ body{font-family:'Inter',sans-serif;background:#F0F4FB;color:var(--text);min-hei
   </div>
 </div>
 
+<!-- STICKY CONDENSED STATS (appears once hero scrolls out of view) -->
+<div class="sticky-stats">
+  <span class="ss-item"><span class="ss-val" id="ss-contrib">9 684 €</span><span class="ss-label">príspevok</span></span>
+  <span class="ss-sep">·</span>
+  <span class="ss-item ss-extra"><span class="ss-val" id="ss-dur">9 mes.</span><span class="ss-label">na mzdu</span></span>
+  <span class="ss-sep ss-extra">·</span>
+  <span class="ss-item"><span class="ss-val" id="ss-savings">28 %</span><span class="ss-label">úspora</span></span>
+  <span class="ss-sep ss-extra">·</span>
+  <span class="ss-item ss-extra"><span class="ss-val" id="ss-mentor">2 mes.+</span><span class="ss-label">mentor</span></span>
+</div>
+
 <!-- INTRO / O PROJEKTE -->
-<div class="intro-band">
-  <div class="intro-title">📋 O projekte „Finančné stimuly pre zamestnanosť"</div>
+<details class="intro-band" open>
+  <summary class="intro-title"><span class="intro-arrow">▾</span> 📋 O projekte „Finančné stimuly pre zamestnanosť"</summary>
   <div class="intro-text">
     Národný projekt realizuje <strong>Ústredie práce, sociálnych vecí a rodiny SR</strong> prostredníctvom 46 úradov práce, financovaný z <strong>ESF+ / Program Slovensko 2021–2027</strong> (rozpočet 317 mil. €). <strong>Hlavným cieľom</strong> je zvýšiť zamestnanosť a zamestnateľnosť znevýhodnených uchádzačov o zamestnanie (ZUoZ) a mladých ľudí v situácii NEET do 30 rokov – medzi cieľové skupiny patria dlhodobo nezamestnaní, osoby s nízkym vzdelaním, osoby so zdravotným postihnutím, migranti, rodičia malých detí a uchádzači nad 50 rokov. Nástrojom je <strong>finančný príspevok zamestnávateľovi na mzdu</strong> nového zamestnanca a na <strong>mentora</strong>, ktorý ho zaškolí, pri vytvorení udržateľného pracovného miesta (podaktivita 1 – „Mentorované zapracovanie"). Aktuálne platí <strong>Aktualizácia č. 7</strong> (od 30. 4. 2026); v marci 2026 bol oznámený nadväzujúci projekt <strong>NP FSZ II.</strong>, ktorý okruh podporovaných regiónov a skupín ďalej rozširuje.
   </div>
-</div>
+</details>
 
 <!-- STATUS BAR -->
 <div class="status-bar">
@@ -283,6 +401,18 @@ body{font-family:'Inter',sans-serif;background:#F0F4FB;color:var(--text);min-hei
   <div class="status-chip">Prioritná kategória ZUoZ</div>
   <div class="status-alert">✓ Oprávnená uchádzačka – najvyšší balík podpory</div>
   <div class="status-note">Pozícia (príklad): Finančný kontrolór · Brutto: 1 700 €/mes.</div>
+</div>
+
+<!-- O AUTORKE -->
+<div class="author-strip">
+  <div class="author-info">
+    <span class="author-avatar">👩‍💼</span>
+    <div>
+      <strong>Ing. Jaroslava Guspanová</strong> — Finance &amp; Controlling, 12+ rokov praxe (SAP, SQL, Power BI)
+      <span class="author-sub">Tento dashboard som postavila s pomocou AI · momentálne hľadám prácu</span>
+    </div>
+  </div>
+  <a class="author-cta" href="https://www.linkedin.com/in/jaroslava-guspanova/" target="_blank" rel="noopener">LinkedIn profil →</a>
 </div>
 
 <!-- TABS -->
@@ -437,53 +567,62 @@ body{font-family:'Inter',sans-serif;background:#F0F4FB;color:var(--text);min-hei
     </div>
 
     <!-- INTERACTIVE BRUTTO INPUT -->
-    <div class="card" style="margin-bottom:16px;background:var(--sky-pale);border-color:var(--sky);">
-      <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;">
-        <div style="flex:1;min-width:220px;">
-          <div style="font-weight:700;font-size:13px;color:var(--steel);margin-bottom:4px;">💶 Interaktívny prepočet pre plný úväzok (TPP)</div>
-          <div style="font-size:11px;color:var(--text-muted);line-height:1.5;">Predvolené hodnoty zodpovedajú Aktualizácii č. 7 (06/2026) pre kategóriu DNO. Všetky polia sú upraviteľné – zmeny sa prejavia okamžite aj na záložke „Porovnanie skupín projektu".</div>
+    <div class="card" id="calc-controls" style="margin-bottom:16px;background:var(--sky-pale);border-color:var(--sky);">
+      <div style="font-weight:700;font-size:13px;color:var(--steel);margin-bottom:4px;">💶 Interaktívny prepočet pre plný úväzok (TPP)</div>
+      <div style="font-size:11px;color:var(--text-muted);line-height:1.5;margin-bottom:4px;">Predvolené hodnoty zodpovedajú Aktualizácii č. 7 (06/2026) pre kategóriu DNO. Všetky polia sú upraviteľné – zmeny sa prejavia okamžite aj na záložke „Porovnanie skupín projektu".</div>
+
+      <div class="calc-grid">
+        <div class="calc-field">
+          <label for="bruttoInput">Hrubá mzda</label>
+          <div class="calc-input-row">
+            <input type="number" id="bruttoInput" value="1700" min="700" max="15000" step="10">
+            <span class="calc-unit">€/mes.</span>
+          </div>
+          <div class="calc-help">Hrubá mesačná mzda zamestnanca pred odvodmi</div>
         </div>
-        <div style="display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
-          <div style="display:flex;align-items:center;gap:6px;">
-            <label for="bruttoInput" style="font-size:12px;font-weight:600;color:var(--navy);">Hrubá mzda:</label>
-            <input type="number" id="bruttoInput" value="1700" min="700" max="15000" step="10"
-              style="width:90px;padding:8px 10px;border:1px solid var(--rule);border-radius:6px;font-size:14px;font-weight:700;color:var(--navy);font-family:'Sora',sans-serif;">
-            <span style="font-size:12px;font-weight:600;color:var(--navy);">€/mes.</span>
+        <div class="calc-field">
+          <label for="pctInput">% z CCP</label>
+          <div class="calc-input-row">
+            <input type="number" id="pctInput" value="80" min="0" max="100" step="1">
+            <span class="calc-unit">%</span>
           </div>
-          <div style="display:flex;align-items:center;gap:6px;">
-            <label for="pctInput" style="font-size:12px;font-weight:600;color:var(--navy);">% z CCP:</label>
-            <input type="number" id="pctInput" value="50" min="0" max="100" step="1"
-              style="width:55px;padding:8px 10px;border:1px solid var(--rule);border-radius:6px;font-size:14px;font-weight:700;color:var(--navy);font-family:'Sora',sans-serif;">
-            <span style="font-size:12px;font-weight:600;color:var(--navy);">%</span>
+          <div class="calc-help">Teoretická sadzba príspevku (80 % = schéma de minimis)</div>
+        </div>
+        <div class="calc-field">
+          <label for="capInput">Strop</label>
+          <div class="calc-input-row">
+            <input type="number" id="capInput" value="1075.98" min="0" max="5000" step="0.01" placeholder="0 = bez stropu">
+            <span class="calc-unit">€/mes.</span>
           </div>
-          <div style="display:flex;align-items:center;gap:6px;">
-            <label for="capInput" style="font-size:12px;font-weight:600;color:var(--navy);">Strop:</label>
-            <input type="number" id="capInput" value="1075.98" min="0" max="5000" step="0.01"
-              style="width:80px;padding:8px 10px;border:1px solid var(--rule);border-radius:6px;font-size:14px;font-weight:700;color:var(--navy);font-family:'Sora',sans-serif;"
-              placeholder="0 = bez stropu">
-            <span style="font-size:12px;font-weight:600;color:var(--navy);">€/mes.</span>
+          <div class="calc-help">Max. mesačná suma podľa Oznámenia č. 8 (0 = bez stropu)</div>
+        </div>
+        <div class="calc-field">
+          <label for="durInput">Príspevok</label>
+          <div class="calc-input-row">
+            <input type="number" id="durInput" value="9" min="1" max="18" step="1">
+            <span class="calc-unit">mes.</span>
           </div>
-          <div style="display:flex;align-items:center;gap:6px;">
-            <label for="durInput" style="font-size:12px;font-weight:600;color:var(--navy);">Príspevok:</label>
-            <input type="number" id="durInput" value="9" min="1" max="18" step="1"
-              style="width:50px;padding:8px 10px;border:1px solid var(--rule);border-radius:6px;font-size:14px;font-weight:700;color:var(--navy);font-family:'Sora',sans-serif;">
-            <span style="font-size:12px;font-weight:600;color:var(--navy);">mes.</span>
+          <div class="calc-help">Dĺžka poskytovania príspevku na mzdu</div>
+        </div>
+        <div class="calc-field">
+          <label for="retInput">Udržanie</label>
+          <div class="calc-input-row">
+            <input type="number" id="retInput" value="6" min="0" max="12" step="1">
+            <span class="calc-unit">mes.</span>
           </div>
-          <div style="display:flex;align-items:center;gap:6px;">
-            <label for="retInput" style="font-size:12px;font-weight:600;color:var(--navy);">Udržanie:</label>
-            <input type="number" id="retInput" value="6" min="0" max="12" step="1"
-              style="width:50px;padding:8px 10px;border:1px solid var(--rule);border-radius:6px;font-size:14px;font-weight:700;color:var(--navy);font-family:'Sora',sans-serif;">
-            <span style="font-size:12px;font-weight:600;color:var(--navy);">mes.</span>
+          <div class="calc-help">Povinné udržanie PM po príspevku (bez podpory)</div>
+        </div>
+        <div class="calc-field">
+          <label for="mentorInput">Mentor</label>
+          <div class="calc-input-row">
+            <input type="number" id="mentorInput" value="2" min="0" max="12" step="1">
+            <span class="calc-unit">mes.</span>
           </div>
-          <div style="display:flex;align-items:center;gap:6px;">
-            <label for="mentorInput" style="font-size:12px;font-weight:600;color:var(--navy);">Mentor:</label>
-            <input type="number" id="mentorInput" value="2" min="0" max="12" step="1"
-              style="width:50px;padding:8px 10px;border:1px solid var(--rule);border-radius:6px;font-size:14px;font-weight:700;color:var(--navy);font-family:'Sora',sans-serif;">
-            <span style="font-size:12px;font-weight:600;color:var(--navy);">mes.</span>
-          </div>
+          <div class="calc-help">1. alikvotný + X plné mesiace príspevku na mentora</div>
         </div>
       </div>
-      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:12px;">
+
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:14px;">
         <button onclick="document.getElementById('bruttoInput').value=1700; document.getElementById('pctInput').value=80; document.getElementById('capInput').value=1075.98; document.getElementById('durInput').value=9; document.getElementById('retInput').value=6; document.getElementById('mentorInput').value=2; recalcTPP();"
           style="font-size:10.5px;font-weight:600;color:var(--teal);background:var(--teal-light);border:1px solid #A8D8CF;border-radius:6px;padding:8px 12px;cursor:pointer;">✅ Oznámenie č.8, Aktualizácia č.7 (DNO): 80% / strop 1 075,98€ / 9+6 mes. / mentor 2 mes.+alikvot</button>
         <button onclick="document.getElementById('bruttoInput').value=1700; document.getElementById('pctInput').value=80; document.getElementById('capInput').value=0; document.getElementById('durInput').value=12; document.getElementById('retInput').value=6; document.getElementById('mentorInput').value=4; recalcTPP();"
@@ -688,6 +827,7 @@ body{font-family:'Inter',sans-serif;background:#F0F4FB;color:var(--text);min-hei
           <div class="profile-row"><span>Príspevok ÚPSVaR (mes. 1–9, strop 0,5 FTE)</span><span>537,99 €/mes.</span></div>
           <div class="profile-row"><span>Náklad firmy (mes. 1–9)</span><span>619,71 €/mes.</span></div>
           <div class="profile-row"><span>Náklad firmy (mes. 10–15, udržanie)</span><span>1 157,70 €/mes.</span></div>
+          <div class="profile-row"><span>Príspevok na mentora (1 alikv. + 2 mes., strop pri 0,5 FTE)</span><span>161,39 €/mes.</span></div>
           <div class="profile-row"><span>Záväzok zamestnávateľa</span><span>doba neurčitá + 6 mes. udržanie</span></div>
         </div>
         <div class="profile-card student">
@@ -1167,6 +1307,8 @@ body{font-family:'Inter',sans-serif;background:#F0F4FB;color:var(--text);min-hei
 
 </div><!-- /panels -->
 
+<button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Späť nahor" title="Späť nahor">↑</button>
+
 <div class="footer-credit">
   Spracovala: <strong style="color:#fff;">Ing. Jaroslava Guspanová</strong> · Košice ·
   <a href="https://www.linkedin.com/in/jaroslava-guspanova/" target="_blank">LinkedIn profil</a>
@@ -1246,7 +1388,25 @@ function computeTPP(brutto, pct, cap, dur, ret, mentorMonths) {
 
 function setText(id, text) {
   const el = document.getElementById(id);
-  if (el) el.textContent = text;
+  if (!el) return;
+  text = String(text);
+  if (el.textContent === text) return;
+  el.textContent = text;
+  if (window.__recalced) { // skip flash on the very first (initial) render
+    el.classList.remove('value-flash');
+    void el.offsetWidth; // restart animation
+    el.classList.add('value-flash');
+  }
+}
+
+// Splits `total` into `count` integers (differing by at most 1) that sum to
+// Math.round(total) exactly — avoids the "sum of rounded months ≠ rounded total" gap.
+function distributeRound(total, count) {
+  if (count <= 0) return [];
+  const target = Math.round(total);
+  const base = Math.floor(target / count);
+  const remainder = target - base * count;
+  return Array.from({length: count}, (_, i) => base + (i < remainder ? 1 : 0));
 }
 
 function recalcTPP() {
@@ -1373,11 +1533,20 @@ function recalcTPP() {
   setText('hero-savings-pct', Math.round(r.savingsPct) + ' %');
   setText('hero-mentor', (r.mentorMonths === 1 ? '1 mes.' : fmt(r.mentorMonths) + ' mes.') + ' +');
 
+  // ── Sticky condensed stats (mirror of hero) ──
+  setText('ss-contrib', fmt(r.contribTotal) + ' €');
+  setText('ss-dur', dur + ' mes.');
+  setText('ss-savings', Math.round(r.savingsPct) + ' %');
+  setText('ss-mentor', (r.mentorMonths === 1 ? '1 mes.' : fmt(r.mentorMonths) + ' mes.') + '+');
+
   // ── Update charts ──
   if (window.chart1) {
     const months = Array.from({length:horizon},(_,i)=>(`Mes. ${i+1}`));
-    const contribution = Array.from({length:horizon},(_,i)=> i < dur ? Math.round(r.contribMonthly) : 0);
-    const firmCost = Array.from({length:horizon},(_,i)=> i < dur ? Math.round(r.empCostSubsidyMonthly) : Math.round(r.ccp));
+    const subsidyMonths = distributeRound(r.contribTotal, dur);
+    const subsidyCosts = distributeRound(r.empCostSubsidyTotal, dur);
+    const retentionCosts = distributeRound(r.empCostRetentionTotal, horizon - dur);
+    const contribution = Array.from({length:horizon},(_,i)=> i < dur ? subsidyMonths[i] : 0);
+    const firmCost = Array.from({length:horizon},(_,i)=> i < dur ? subsidyCosts[i] : retentionCosts[i - dur]);
     chart1.data.labels = months;
     chart1.data.datasets[0].data = contribution;
     chart1.data.datasets[1].data = firmCost;
@@ -1405,6 +1574,10 @@ function showTab(id) {
   if(id === 'finance' && !window.chart1Built) buildChartMonthly();
   if(id === 'compare' && !window.chart2Built) buildChartCompare();
   if(id === 'parttime' && !window.chart3Built) buildChartsCross();
+  // Scroll the tab bar into view so a long previous panel doesn't leave the
+  // new (possibly shorter) panel's content out of sight.
+  const tabsWrap = document.querySelector('.tabs-wrap');
+  if (tabsWrap) tabsWrap.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
 // Helper: read current input values (with fallback defaults)
@@ -1432,8 +1605,11 @@ function buildChartMonthly() {
   const r = computeTPP(inp.brutto, inp.pct, inp.cap, inp.dur, inp.ret, inp.mentorMonths);
   const horizon = r.horizon;
   const months = Array.from({length:horizon},(_,i)=>(`Mes. ${i+1}`));
-  const contribution = Array.from({length:horizon},(_,i)=> i < inp.dur ? Math.round(r.contribMonthly) : 0);
-  const firmCost = Array.from({length:horizon},(_,i)=> i < inp.dur ? Math.round(r.empCostSubsidyMonthly) : Math.round(r.ccp));
+  const subsidyMonths = distributeRound(r.contribTotal, inp.dur);
+  const subsidyCosts = distributeRound(r.empCostSubsidyTotal, inp.dur);
+  const retentionCosts = distributeRound(r.empCostRetentionTotal, horizon - inp.dur);
+  const contribution = Array.from({length:horizon},(_,i)=> i < inp.dur ? subsidyMonths[i] : 0);
+  const firmCost = Array.from({length:horizon},(_,i)=> i < inp.dur ? subsidyCosts[i] : retentionCosts[i - inp.dur]);
   window.chart1 = new Chart(document.getElementById('chartMonthly'), {
     type: 'bar',
     data: {
@@ -1500,6 +1676,15 @@ document.addEventListener('DOMContentLoaded', function() {
     if (el) el.addEventListener('input', recalcTPP);
   });
   recalcTPP();
+  window.__recalced = true; // subsequent recalcTPP() calls (user edits) will flash changed values
+
+  // Back-to-top button: show after scrolling past the hero section
+  const backToTop = document.getElementById('backToTop');
+  if (backToTop) {
+    window.addEventListener('scroll', () => {
+      backToTop.classList.toggle('visible', window.scrollY > 400);
+    }, { passive: true });
+  }
 });
 
 
